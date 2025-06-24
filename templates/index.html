@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word to PDF Converter</title>
+    <title>Универсальный конвертер файлов</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,6 +29,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            margin-top: 10px;
         }
         .btn:hover {
             background: #45a049;
@@ -36,15 +37,35 @@
         .file-input {
             margin: 20px 0;
         }
+        .format-select {
+            margin: 15px 0;
+            padding: 8px;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .file-types {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #666;
+        }
     </style>
 </head>
 <body>
-    <h1>Конвертер Word в PDF</h1>
+    <h1>Универсальный конвертер файлов</h1>
     <div class="upload-form">
         <form method="POST" enctype="multipart/form-data">
-            <input type="file" name="file" class="file-input" accept=".docx" required>
+            <input type="file" name="file" class="file-input" accept=".docx,.pdf,.txt" required>
+            <div class="file-types">Поддерживаемые форматы: DOCX, PDF, TXT</div>
+            <select name="convert_to" class="format-select">
+                <optgroup label="Конвертировать в">
+                    <option value="pdf">PDF</option>
+                    <option value="docx">DOCX</option>
+                    <option value="txt">TXT</option>
+                </optgroup>
+            </select>
             <br>
-            <button type="submit" class="btn">Конвертировать в PDF</button>
+            <button type="submit" class="btn">Конвертировать</button>
         </form>
     </div>
 </body>
