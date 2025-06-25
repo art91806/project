@@ -5,7 +5,6 @@ from docx import Document
 import os
 import PyPDF2
 from pdf2docx import Converter
-from io import StringIO
 
 app = Flask(__name__)
 
